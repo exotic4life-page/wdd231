@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekki Chamber of Commerce - Join</title>
+    <meta name="description" content="Membership benefits and application form for the Lekki Chamber of Commerce.">
+    <meta name="author" content="Agbo Chidiebere">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <h1>Lekki Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Join the Chamber</h2>
+            <p>Grow your network, increase visibility, and strengthen your business with us.</p>
+        </section>
+
+        <section class="content-grid">
+            <div class="card">
+                <h3>Membership Levels</h3>
+                <ul>
+                    <li><strong>Non-Profit Level:</strong> Basic directory listing and community event access.</li>
+                    <li><strong>Silver Level:</strong> Enhanced directory listing, training sessions, and social media spotlight.</li>
+                    <li><strong>Gold Level:</strong> Premium directory placement, event sponsorships, and executive luncheons.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Membership Application</h3>
+                <form action="#" method="get">
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="fname" name="fname" required><br><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="lname" name="lname" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="membership">Membership Level:</label><br>
+                    <select id="membership" name="membership">
+                        <option value="nonprofit">Non-Profit ($0)</option>
+                        <option value="silver">Silver ($100)</option>
+                        <option value="gold">Gold ($250)</option>
+                    </select><br><br>
+
+                    <button type="submit" class="cta-button">Apply Now</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | Lekki Chamber of Commerce</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
