@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lekki Chamber of Commerce - Directory</title>
-    <meta name="description" content="Local business and organization directory for the Lekki Chamber of Commerce.">
-    <meta name="author" content="Your Name">
+    <title>Lekki Chamber of Commerce - Member Directory</title>
+    <meta name="description" content="Local business and organization directory for the Lekki Chamber of Commerce supporting local growth and networking.">
+    <meta name="author" content="Agbo Chidiebere">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Lekki Chamber of Commerce - Member Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotic4life-page.github.io/wdd231/chamber/directory.html">
+    <meta property="og:image" content="https://exotic4life-page.github.io/wdd231/chamber/images/lekki-hero.jpg">
+    <meta property="og:description" content="Explore local businesses, tech hubs, and services powering the Lekki community.">
+
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
@@ -14,7 +24,8 @@
         <div class="logo-box">
             <h1>Lekki Chamber of Commerce</h1>
         </div>
-        <nav>
+        <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        <nav id="primary-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
@@ -30,22 +41,23 @@
             <p>Support our local businesses and organizations powering the Lekki community.</p>
         </section>
 
-        <section class="content-grid">
-            <div class="card">
-                <h3>Lekki Tech Hub</h3>
-                <p>Technology & Software Development Services</p>
-                <p>Phone: +234 123 4567</p>
-            </div>
-            <div class="card">
-                <h3>Atlantic Coast Hotel</h3>
-                <p>Hospitality & Tourism</p>
-                <p>Phone: +234 765 4321</p>
-            </div>
-        </section>
+        <!-- View Toggle Controls -->
+        <div class="view-toggle">
+            <button id="grid-btn" class="view-btn active" aria-label="Grid View">⏹️ Grid</button>
+            <button id="list-btn" class="view-btn" aria-label="List View">☰ List</button>
+        </div>
+
+        <!-- Dynamic Member Display Container -->
+        <div id="member-container" class="grid-view">
+            <!-- JavaScript dynamically loads member cards here -->
+        </div>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | Lekki Chamber of Commerce</p>
+        <p><strong>Lekki Chamber of Commerce</strong></p>
+        <p>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+        <p>info@lekkichamber.org | +234 1 234 5678</p>
+        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
 </body>

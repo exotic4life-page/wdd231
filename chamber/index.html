@@ -6,6 +6,7 @@
     <title>Lekki Chamber of Commerce - Home</title>
     <meta name="description" content="Lekki Chamber of Commerce website supporting local businesses, networking, and community growth.">
     <meta name="author" content="Agbo Chidiebere">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
@@ -14,7 +15,8 @@
         <div class="logo-box">
             <h1>Lekki Chamber of Commerce</h1>
         </div>
-        <nav>
+        <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        <nav id="primary-nav">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
@@ -25,26 +27,48 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Welcome to the Lekki Business Hub</h2>
-            <p>Fostering local business growth, networking, and community advocacy across Lekki.</p>
-            <a href="join.html" class="cta-button">Join the Chamber</a>
+        <!-- Hero Section with Scalable Image & Call to Action -->
+        <section class="home-hero">
+            <img src="images/lekki-hero.jpg" alt="Lekki Peninsula Skyline and Business District" class="hero-img">
+            <div class="hero-overlay">
+                <h2>Welcome to the Lekki Business Hub</h2>
+                <p>Fostering local business growth, networking, and community advocacy across Lekki.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
         </section>
 
-        <section class="home-grid">
-            <div class="card weather-card">
-                <h3>Current Weather</h3>
-                <p>Lekki, NG: 30°C - Sunny</p>
-            </div>
-            <div class="card spotlight-card">
-                <h3>Business Spotlight</h3>
-                <p>Highlighting local members making an impact in our community.</p>
-            </div>
+        <!-- Current Events & Weather Grid -->
+        <div class="home-grid">
+            <section class="card events-card">
+                <h3>Current Events</h3>
+                <ul class="events-list">
+                    <li><strong>Lekki Business Networking Luncheon</strong> — Thursday at 12:00 PM (Admiralty Way)</li>
+                    <li><strong>Small Business Digital Growth Workshop</strong> — Next Tuesday at 10:00 AM</li>
+                    <li><strong>Annual Lekki Trade &amp; Investment Expo</strong> — Coming Next Month</li>
+                </ul>
+            </section>
+
+            <section class="card weather-card">
+                <h3>Lekki Weather</h3>
+                <div id="current-weather">
+                    <p>Loading current weather...</p>
+                </div>
+                <div id="forecast"></div>
+            </section>
+        </div>
+
+        <!-- Company Spotlights Section -->
+        <section class="spotlights-section">
+            <h2 class="section-title">Member Spotlights</h2>
+            <div class="spotlights-container" id="spotlight-container"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | Lekki Chamber of Commerce</p>
+        <p><strong>Lekki Chamber of Commerce</strong></p>
+        <p>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+        <p>info@lekkichamber.org | +234 1 234 5678</p>
+        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
 </body>

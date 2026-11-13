@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Lekki Tech Hub",
+    "address": "15 Admiralty Way, Lekki Phase 1, Lagos",
+    "phone": "+234 1 234 5678",
+    "website": "https://lekkitechhub.example.com",
+    "image": "images/member1.svg",
+    "membershipLevel": 3,
+    "description": "Leading technology incubation center and software development workspace."
+  },
+  {
+    "name": "Atlantic Coast Hotel",
+    "address": "42 Freedom Way, Lekki, Lagos",
+    "phone": "+234 803 765 4321",
+    "website": "https://atlanticcoast.example.com",
+    "image": "images/member2.svg",
+    "membershipLevel": 2,
+    "description": "Luxury hospitality, conference facilities, and beachfront dining."
+  },
+  {
+    "name": "Lagos Maritime & Logistics",
+    "address": "8 Lekki-Epe Expressway, Lagos",
+    "phone": "+234 701 987 6543",
+    "website": "https://lagosmaritime.example.com",
+    "image": "images/member3.svg",
+    "membershipLevel": 3,
+    "description": "Global freight forwarding, port logistics, and supply chain solutions."
+  },
+  {
+    "name": "Peninsula Solar Energy",
+    "address": "24 Chevron Drive, Lekki, Lagos",
+    "phone": "+234 805 432 1098",
+    "website": "https://peninsulasolar.example.com",
+    "image": "images/member4.svg",
+    "membershipLevel": 2,
+    "description": "Renewable energy solutions, solar inverter installation, and maintenance."
+  },
+  {
+    "name": "Coastal Café & Bakery",
+    "address": "3 Kusenla Road, Ikate, Lekki",
+    "phone": "+234 809 111 2233",
+    "website": "https://coastalcafe.example.com",
+    "image": "images/member1.svg",
+    "membershipLevel": 1,
+    "description": "Artisanal pastries, organic coffee, and cozy co-working spaces."
+  },
+  {
+    "name": "Lekki Legal Partners",
+    "address": "10 Lekki Expressway, Victoria Island extension",
+    "phone": "+234 802 333 4455",
+    "website": "https://lekkilegal.example.com",
+    "image": "images/member2.svg",
+    "membershipLevel": 2,
+    "description": "Corporate law, trademark registration, and business advisory services."
+  },
+  {
+    "name": "Epe Fresh Agro Farms",
+    "address": "Expression Road, Lekki Epe Corridor",
+    "phone": "+234 812 555 6677",
+    "website": "https://epeagro.example.com",
+    "image": "images/member3.svg",
+    "membershipLevel": 1,
+    "description": "Sustainable agriculture, organic produce supply, and agro-processing."
+  }
+]

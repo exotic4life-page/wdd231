@@ -6,6 +6,10 @@
     --text-color: #1d2d44;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
@@ -19,24 +23,44 @@ header {
     color: #ffffff;
     padding: 1rem 2rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
 
-@media(min-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.logo-box h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+#menu-toggle {
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav {
+    width: 100%;
+    display: none;
+}
+
+nav.open {
+    display: block;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 nav a {
@@ -44,6 +68,7 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem;
+    display: inline-block;
 }
 
 nav a:hover, nav a.active {
@@ -51,19 +76,71 @@ nav a:hover, nav a.active {
     border-bottom: 2px solid var(--accent-color);
 }
 
+@media (min-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    nav {
+        width: auto;
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+}
+
 main {
-    padding: 2rem;
+    padding: 1.5rem;
     max-width: 1200px;
     margin: auto;
 }
 
+/* Hero Banners */
 .hero {
     background-color: var(--secondary-color);
-    color: white;
+    color: #ffffff;
     padding: 3rem 2rem;
     text-align: center;
     border-radius: 8px;
     margin-bottom: 2rem;
+}
+
+.home-hero {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: var(--primary-color);
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(11, 37, 69, 0.88);
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+.hero-overlay h2 {
+    margin-top: 0;
 }
 
 .cta-button {
@@ -74,31 +151,259 @@ main {
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    border: none;
+    cursor: pointer;
 }
 
-.home-grid {
+.cta-button:hover {
+    background-color: #ffffff;
+}
+
+/* Grids & Cards */
+.home-grid, .content-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
     .home-grid {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .content-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 .card {
-    background-color: white;
+    background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.events-list {
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+.events-list li {
+    margin-bottom: 0.75rem;
+}
+
+/* Weather Styles */
+.weather-current-display {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.weather-temp {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.weather-desc {
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.forecast-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.forecast-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.forecast-list li:last-child {
+    border-bottom: none;
+}
+
+/* Spotlights Styles (Home) */
+.spotlights-section {
+    margin-top: 2.5rem;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.spotlights-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .spotlights-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.spotlight-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.spotlight-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.spotlight-card img {
+    width: 110px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0.75rem 0;
+}
+
+.spotlight-card p {
+    margin: 0.35rem 0;
+    font-size: 0.95rem;
+}
+
+.spotlight-card a {
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.spotlight-card a:hover {
+    text-decoration: underline;
+}
+
+.membership-badge {
+    margin-top: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Directory View Toggle Styles */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.view-btn {
+    background-color: #ffffff;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 0.5rem 1.25rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn.active, .view-btn:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+/* Directory Grid View */
+.grid-view {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.grid-view .member-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-view .member-card img {
+    width: 110px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* Directory List View (Images Hidden per Rubric) */
+.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-view .member-card {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-view .member-card img {
+    display: none;
+}
+
+.list-view .member-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.list-view .member-info h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 1.5rem;
     margin-top: 3rem;
