@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lekki Chamber of Commerce - Join</title>
+    <title>Lekki Chamber of Commerce - Join Us</title>
     <meta name="description" content="Membership benefits and application form for the Lekki Chamber of Commerce.">
     <meta name="author" content="Agbo Chidiebere">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Lekki Chamber of Commerce - Join">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotic4life-page.github.io/wdd231/chamber/join.html">
+    <meta property="og:image" content="https://exotic4life-page.github.io/wdd231/chamber/images/lekki-hero.jpg">
+    <meta property="og:description" content="Grow your network, increase visibility, and strengthen your business with the Lekki Chamber of Commerce.">
+
+    <!-- Dual CSS Links -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo-box">
-            <h1>Lekki Chamber of Commerce</h1>
+            <span class="logo-text">Lekki Chamber of Commerce</span>
         </div>
         <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
         <nav id="primary-nav">
@@ -27,46 +44,144 @@
 
     <main>
         <section class="hero">
-            <h2>Join the Chamber</h2>
+            <h1>Join the Chamber</h1>
             <p>Grow your network, increase visibility, and strengthen your business with us.</p>
         </section>
 
-        <section class="content-grid">
-            <div class="card">
-                <h3>Membership Levels</h3>
-                <ul>
-                    <li><strong>Non-Profit Level:</strong> Basic directory listing and community event access.</li>
-                    <li><strong>Silver Level:</strong> Enhanced directory listing, training sessions, and social media spotlight.</li>
-                    <li><strong>Gold Level:</strong> Premium directory placement, event sponsorships, and executive luncheons.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Membership Application</h3>
-                <form action="#" method="get">
-                    <label for="fname">First Name:</label><br>
-                    <input type="text" id="fname" name="fname" required><br><br>
+        <div class="join-container">
+            <!-- Membership Application Form -->
+            <section class="form-card">
+                <h2>Membership Application</h2>
+                <form method="get" action="thankyou.html" class="join-form">
+                    <label>
+                        First Name *
+                        <input type="text" name="first-name" title="Applicant's First Name" autocomplete="given-name" required>
+                    </label>
 
-                    <label for="lname">Last Name:</label><br>
-                    <input type="text" id="lname" name="lname" required><br><br>
+                    <label>
+                        Last Name *
+                        <input type="text" name="last-name" title="Applicant's Last Name" autocomplete="family-name" required>
+                    </label>
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <label>
+                        Organizational Title
+                        <input type="text" name="org-title" title="Organizational Title (at least 7 letters, hyphens, or spaces)" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+                    </label>
 
-                    <label for="membership">Membership Level:</label><br>
-                    <select id="membership" name="membership">
-                        <option value="nonprofit">Non-Profit ($0)</option>
-                        <option value="silver">Silver ($100)</option>
-                        <option value="gold">Gold ($250)</option>
-                    </select><br><br>
+                    <label>
+                        Email Address *
+                        <input type="email" name="email" title="Email Address" autocomplete="email" placeholder="example@lekkibusiness.com" required>
+                    </label>
 
-                    <button type="submit" class="cta-button">Apply Now</button>
+                    <label>
+                        Mobile Phone Number *
+                        <input type="tel" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
+                    </label>
+
+                    <label>
+                        Business / Organization Name *
+                        <input type="text" name="organization" title="Business or Organization Name" autocomplete="organization" required>
+                    </label>
+
+                    <label>
+                        Membership Level *
+                        <select name="membership" title="Select Membership Level" required>
+                            <option value="" disabled selected>Select a Membership Level...</option>
+                            <option value="np">NP Membership (Non-Profit - No Fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Business / Organization Description
+                        <textarea name="description" title="Business or Organization Description" rows="4"></textarea>
+                    </label>
+
+                    <!-- Hidden Timestamp -->
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" value="Apply for Membership" class="cta-button">
                 </form>
-            </div>
-        </section>
+            </section>
+
+            <!-- 4 Membership Level Cards -->
+            <section class="levels-section">
+                <h2>Membership Levels</h2>
+                <div class="membership-cards">
+                    <div class="level-card">
+                        <h3>Non-Profit Membership Level</h3>
+                        <button type="button" class="modal-btn" data-modal="modal-np">Learn More</button>
+                    </div>
+                    <div class="level-card">
+                        <h3>Bronze Membership Level</h3>
+                        <button type="button" class="modal-btn" data-modal="modal-bronze">Learn More</button>
+                    </div>
+                    <div class="level-card">
+                        <h3>Silver Membership Level</h3>
+                        <button type="button" class="modal-btn" data-modal="modal-silver">Learn More</button>
+                    </div>
+                    <div class="level-card">
+                        <h3>Gold Membership Level</h3>
+                        <button type="button" class="modal-btn" data-modal="modal-gold">Learn More</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Four HTML Modals -->
+        <dialog id="modal-np" class="membership-modal">
+            <h3>Non-Profit (NP) Membership</h3>
+            <p><strong>Cost:</strong> Free (No Fee for verified non-profits)</p>
+            <ul>
+                <li>Basic listing in the online Chamber Directory</li>
+                <li>Invitation to monthly community networking mixers</li>
+                <li>Access to non-profit grant workshops</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="modal-bronze" class="membership-modal">
+            <h3>Bronze Membership</h3>
+            <p><strong>Cost:</strong> $50 / year</p>
+            <ul>
+                <li>All Non-Profit Membership benefits</li>
+                <li>10% discount on Chamber training seminars and workshops</li>
+                <li>Ribbon-cutting ceremony announcement in our newsletter</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="modal-silver" class="membership-modal">
+            <h3>Silver Membership</h3>
+            <p><strong>Cost:</strong> $120 / year</p>
+            <ul>
+                <li>All Bronze Membership benefits</li>
+                <li>Eligible for random spotlight rotation on the Chamber Home Page</li>
+                <li>25% discount on Chamber events and trade fair booths</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="modal-gold" class="membership-modal">
+            <h3>Gold Membership</h3>
+            <p><strong>Cost:</strong> $250 / year</p>
+            <ul>
+                <li>All Silver Membership benefits</li>
+                <li>Priority Home Page spotlight placement and banner advertising</li>
+                <li>VIP access and complimentary tickets to annual Lekki Business Gala</li>
+                <li>Executive luncheons and dedicated business advocacy</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | Lekki Chamber of Commerce</p>
+        <p><strong>Lekki Chamber of Commerce</strong></p>
+        <p>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+        <p>info@lekkichamber.org | +234 1 234 5678</p>
+        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
 </body>

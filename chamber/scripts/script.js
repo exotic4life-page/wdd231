@@ -192,3 +192,59 @@ if (gridBtn && listBtn && memberContainer) {
 }
 
 fetchMembers();
+// --- Join Page: Hidden Timestamp & Modals ---
+const timestampField = document.getElementById("timestamp");
+if (timestampField) {
+    timestampField.value = new Date().toLocaleString();
+}
+
+const modalButtons = document.querySelectorAll(".modal-btn");
+modalButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modalId = btn.getAttribute("data-modal");
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.showModal();
+        }
+    });
+});
+
+const closeButtons = document.querySelectorAll(".close-modal");
+closeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modal = btn.closest("dialog");
+        if (modal) {
+            modal.close();
+        }
+    });
+});
+
+document.querySelectorAll(".membership-modal").forEach(modal => {
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.close();
+        }
+    });
+});
+
+// --- Thank You Page: Display Submitted Form Information ---
+const formResultsDiv = document.getElementById("form-results");
+if (formResultsDiv) {
+    const params = new URLSearchParams(window.location.search);
+
+    const firstName = params.get("first-name") || "N/A";
+    const lastName = params.get("last-name") || "N/A";
+    const email = params.get("email") || "N/A";
+    const phone = params.get("phone") || "N/A";
+    const organization = params.get("organization") || "N/A";
+    const timestamp = params.get("timestamp") || "N/A";
+
+    formResultsDiv.innerHTML = `
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Last Name:</strong> ${lastName}</p>
+        <p><strong>Email Address:</strong> ${email}</p>
+        <p><strong>Mobile Phone Number:</strong> ${phone}</p>
+        <p><strong>Business / Organization Name:</strong> ${organization}</p>
+        <p><strong>Application Timestamp:</strong> ${timestamp}</p>
+    `;
+}

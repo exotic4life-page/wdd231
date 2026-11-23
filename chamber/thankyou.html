@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekki Chamber of Commerce - Application Received</title>
+    <meta name="description" content="Thank you for submitting your membership application to the Lekki Chamber of Commerce.">
+    <meta name="author" content="Agbo Chidiebere">
+    
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Lekki Chamber of Commerce - Thank You">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exotic4life-page.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:image" content="https://exotic4life-page.github.io/wdd231/chamber/images/lekki-hero.jpg">
+    <meta property="og:description" content="Confirmation of your Lekki Chamber of Commerce membership application.">
+
+    <!-- Dual CSS Links -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <span class="logo-text">Lekki Chamber of Commerce</span>
+        </div>
+        <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Thank You for Applying!</h1>
+            <p>We have received your Lekki Chamber of Commerce membership application.</p>
+        </section>
+
+        <section class="results-card">
+            <h2>Application Summary</h2>
+            <div id="form-results" class="results-list">
+                <!-- JavaScript displays the submitted form information here -->
+            </div>
+            <p style="margin-top: 1.5rem;">
+                <a href="index.html" class="cta-button">Return to Home</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Lekki Chamber of Commerce</strong></p>
+        <p>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</p>
+        <p>info@lekkichamber.org | +234 1 234 5678</p>
+        <p>&copy; <span id="currentyear"></span> | Agbo Chidiebere | WDD 231</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
