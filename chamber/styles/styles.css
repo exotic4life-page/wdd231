@@ -605,3 +605,6 @@ footer {
 .results-list p:last-child {
     border-bottom: none;
 }
+.return-home {
+    margin-top: 1.5rem;
+}
